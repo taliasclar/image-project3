@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
-  </head>
-  <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
-  </body>
+
+<head>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"> </script>
+</head>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="sky" src="assets/summerbackground.jpg">
+      <img id="tex1" src="assets/sandtexture.jpg">
+      <img id="tex2" src="assets/beachballtexture.jpg">
+      <img id="tex3" src="assets/icecreamtexture.jpg">
+    </a-assets>
+
+    <!-- Background sky -->
+    <a-sky src="#sky" radius="30"></a-sky>
+
+    <!-- Sandcastle Base-->
+    <a-box src="#tex1" width="2" height="1" depth="2" position="0 0.5 -6">
+    </a-box>
+    <!-- Towers -->
+    <a-cylinder src="#tex1" height="1.5" radius="0.3" position="-0.75 1.25 -5.25">
+    </a-cylinder>
+    <a-cylinder src="#tex1" height="1.5" radius="0.3" position="0.75 1.25 -5.25">
+    </a-cylinder>
+    <a-cylinder src="#tex1" height="1.5" radius="0.3" position="-0.75 1.25 -6.75">
+    </a-cylinder>
+    <a-cylinder src="#tex1" height="1.5" radius="0.3" position="0.75 1.25 -6.75">
+    </a-cylinder>
+    <!-- Cones on top of towers -->
+    <a-cone src="#tex1" height="0.6" radius-bottom="0.3" radius-top="0.05" position="-0.75 2.05 -5.25">
+    </a-cone>
+    <a-cone src="#tex1" height="0.6" radius-bottom="0.3" radius-top="0.05" position="0.75 2.05 -5.25">
+    </a-cone>
+    <a-cone src="#tex1" height="0.6" radius-bottom="0.3" radius-top="0.05" position="-0.75 2.05 -6.75">
+    </a-cone>
+    <a-cone src="#tex1" height="0.6" radius-bottom="0.3" radius-top="0.05" position="0.75 2.05 -6.75">
+    </a-cone>
+
+    <!-- Beach Ball -->
+    <a-sphere src="#tex2" radius="0.5" position="-3 0.5 -6"></a-sphere>
+
+ <!-- Ice Cream Cone -->
+    <a-cone src="#tex3" height="1.5" radius-bottom="0.5" radius-top="0.05" position="4 0.75 -6" rotation="180 0 0">
+    </a-cone>
+    <a-sphere color="#FFC0CB" radius="0.45" position="4 1.5 -6">
+    </a-sphere>
+  </a-scene>
+</body>
+
 </html>
